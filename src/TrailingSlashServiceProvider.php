@@ -16,7 +16,7 @@ class TrailingSlashServiceProvider extends PackageServiceProvider
 
     public function packageBooted()
     {
-        if($this->app->config->get('trailing-slash.enabled')) {
+        if ($this->app->config->get('trailing-slash.enabled')) {
             $this->registerUrlGeneratorWithTrailingSlash();
         }
     }

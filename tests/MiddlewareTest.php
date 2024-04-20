@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Request;
 use Vormkracht10\TrailingSlash\Middleware\EnsureWithoutTrailingSlash;
 
 it('can access root url', function () {
-    Route::get('/', fn() => 'Hello World');
-    Route::get('route-without-trailing-slash', fn() => 'Hello World');
+    Route::get('/', fn () => 'Hello World');
+    Route::get('route-without-trailing-slash', fn () => 'Hello World');
 
     $this->get('/')->assertOk();
 });
@@ -35,12 +35,11 @@ it('ensure url is with trailing slash', function () {
     $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());
 });
 
-
 it('ensure url is without trailing slash', function () {
-    Route::get('/with-trailing-slash', fn() => '');
+    Route::get('/with-trailing-slash', fn () => '');
 
     $this->withMiddleware(
         EnsureWithoutTrailingSlash::class,
     )->get('/with-trailing-slash/')
-    ->assertMovedPermanently();
+        ->assertMovedPermanently();
 });
