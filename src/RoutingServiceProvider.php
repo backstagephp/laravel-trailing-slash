@@ -2,26 +2,16 @@
 
 namespace Vormkracht10\TrailingSlash;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Routing\RoutingServiceProvider as BaseRoutingServiceProvider;
 
-class TrailingSlashServiceProvider extends PackageServiceProvider
+class RoutingServiceProvider extends BaseRoutingServiceProvider
 {
-    public function configurePackage(Package $package): void
+    public function register(): void
     {
-        $package
-            ->name('trailing-slash')
-            ->hasConfigFile();
+        $this->registerUrlGenerator();
     }
 
-    public function packageBooted()
-    {
-        if($this->app->config->get('trailing-slash.enabled')) {
-            $this->registerUrlGeneratorWithTrailingSlash();
-        }
-    }
-
-    protected function registerUrlGeneratorWithTrailingSlash(): void
+    protected function registerUrlGenerator(): void
     {
         $this->app->singleton('url', function ($app) {
             $routes = $app['router']->getRoutes();
@@ -35,7 +25,9 @@ class TrailingSlashServiceProvider extends PackageServiceProvider
                 $routes,
                 $app->rebinding(
                     'request',
-                    $this->requestRebinder()
+                    function ($app, $request) {
+                        $app['url']->setRequest($request);
+                    }
                 ),
                 $app['config']['app.asset_url']
             );
