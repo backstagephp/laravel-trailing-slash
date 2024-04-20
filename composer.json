@@ -1,6 +1,6 @@
 {
     "name": "vormkracht10/laravel-trailing-slash",
-    "description": "Choose to use Laravel explicitly with or without trailing slashes with control in URL generation and proper redirects for SEO.",
+    "description": "Use Laravel explicitly with or without trailing slashes, controlling URL generation and proper redirects for SEO.",
     "keywords": [
         "Vormkracht10",
         "laravel",
