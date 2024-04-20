@@ -1,4 +1,4 @@
-# Choose to use Laravel explicitly with or without trailing slashes with control in URL generation and proper redirects for SEO.
+# Laravel Trailing Slash
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/vormkracht10/laravel-trailing-slash.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-trailing-slash)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/vormkracht10/laravel-trailing-slash/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/vormkracht10/laravel-trailing-slash/actions?query=workflow%3Arun-tests+branch%3Amain)
