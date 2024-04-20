@@ -2,7 +2,6 @@
 
 namespace Vormkracht10\TrailingSlash\Middleware;
 
-use Closure;
 use Illuminate\Http\Request;
 
 class TrailingSlashMiddleware
@@ -15,7 +14,7 @@ class TrailingSlashMiddleware
             return false;
         }
 
-        if($this->getParsedUrl($request)['path'] === '/') {
+        if ($this->getParsedUrl($request)['path'] === '/') {
             return false;
         }
 
@@ -50,7 +49,7 @@ class TrailingSlashMiddleware
 
     public function getParsedUrl(Request $request)
     {
-        if($this->parsedUrl) {
+        if ($this->parsedUrl) {
             return $this->parsedUrl;
         }
 

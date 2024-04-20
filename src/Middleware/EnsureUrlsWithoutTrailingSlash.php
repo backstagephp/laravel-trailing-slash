@@ -8,7 +8,7 @@ class EnsureUrlsWithoutTrailingSlash extends TrailingSlashMiddleware
 {
     public function handle($request, Closure $next)
     {
-        if(! $this->shouldHandle($request, shouldHaveTrailingSlash: false)) {
+        if (! $this->shouldHandle($request, shouldHaveTrailingSlash: false)) {
             return $next($request);
         }
 

@@ -10,6 +10,6 @@ return [
 
     // Execute middleware only on these methods
     'methods' => [
-        'GET', 'HEAD', 'OPTIONS'
+        'GET', 'HEAD', 'OPTIONS',
     ],
 ];
