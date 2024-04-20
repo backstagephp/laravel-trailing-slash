@@ -4,6 +4,8 @@ namespace Vormkracht10\TrailingSlash;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Vormkracht10\TrailingSlash\Middleware\EnsureUrlsWithTrailingSlash;
+use Vormkracht10\TrailingSlash\Middleware\EnsureUrlsWithoutTrailingSlash;
 
 class TrailingSlashServiceProvider extends PackageServiceProvider
 {
@@ -16,8 +18,17 @@ class TrailingSlashServiceProvider extends PackageServiceProvider
 
     public function packageBooted()
     {
-        if ($this->app->config->get('trailing-slash.enabled')) {
+        if(! $this->app->config->get('trailing-slash.auto')) {
+            return;
+        }
+
+        if($this->app->config->get('trailing-slash.trailing')) {
             $this->registerUrlGeneratorWithTrailingSlash();
+
+            $this->app['router']->prependMiddlewareToGroup('web', EnsureUrlsWithTrailingSlash::class);
+        }
+        else {
+            $this->app['router']->prependMiddlewareToGroup('web', EnsureUrlsWithoutTrailingSlash::class);
         }
     }
 
@@ -35,7 +46,9 @@ class TrailingSlashServiceProvider extends PackageServiceProvider
                 $routes,
                 $app->rebinding(
                     'request',
-                    $this->requestRebinder()
+                    function ($app, $request) {
+                        $app['url']->setRequest($request);
+                    }
                 ),
                 $app['config']['app.asset_url']
             );

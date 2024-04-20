@@ -4,7 +4,7 @@ namespace Vormkracht10\TrailingSlash\Middleware;
 
 use Closure;
 
-class EnsureWithoutTrailingSlash
+class EnsureUrlsWithTrailingSlash
 {
     public function handle($request, Closure $next)
     {
@@ -32,9 +32,7 @@ class EnsureWithoutTrailingSlash
             return $next($request);
         }
 
-        $url['path'] = rtrim($url['path'], '/');
-
-        return $this->redirect($request->getScheme().'://'.$request->getHost().$url['path'].$url['query']);
+        return $this->redirect($url['path'].'/');
     }
 
     protected function redirect(string $url)

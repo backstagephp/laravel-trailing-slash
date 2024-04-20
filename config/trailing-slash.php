@@ -1,7 +1,10 @@
 <?php
 
 return [
-    // enable or disable the usage of trailing slashes in Laravel,
-    // proper SEO redirects are set up either way, enabled or disabled
-    'enabled' => env('TRAILING_SLASH_ENABLED', true),
+    // Enable or disable trailing slashes
+    'trailing' => env('TRAILING_SLASHES', true),
+
+    // Enable or disable automatic setup of this package
+    // When enabled, only installing this package is sufficient for everything to work
+    'auto' => env('TRAILING_SLASHES_AUTO', true),
 ];
