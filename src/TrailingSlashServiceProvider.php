@@ -12,9 +12,8 @@ class TrailingSlashServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('trailing-slash');
-
-        $this->mergeConfigFrom(__DIR__.'/../config/backstage/trailing-slash.php', 'backstage.trailing-slash');
+            ->name('trailing-slash')
+            ->hasConfigFile();
     }
 
     public function packageBooted()
