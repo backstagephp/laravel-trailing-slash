@@ -1,9 +1,9 @@
 # Laravel Trailing Slash
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/vormkracht10/laravel-trailing-slash.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-trailing-slash)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/vormkracht10/laravel-trailing-slash/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/vormkracht10/laravel-trailing-slash/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/vormkracht10/laravel-trailing-slash/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/vormkracht10/laravel-trailing-slash/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/vormkracht10/laravel-trailing-slash.svg?style=flat-square)](https://packagist.org/packages/vormkracht10/laravel-trailing-slash)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/backstage/laravel-trailing-slash.svg?style=flat-square)](https://packagist.org/packages/backstage/laravel-trailing-slash)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/backstagephp/laravel-trailing-slash/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/backstagephp/laravel-trailing-slash/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/backstagephp/laravel-trailing-slash/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/backstagephp/laravel-trailing-slash/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/backstage/laravel-trailing-slash.svg?style=flat-square)](https://packagist.org/packages/backstage/laravel-trailing-slash)
 
 Use Laravel explicitly with or without trailing slashes, controlling URL generation and proper redirects for SEO. Works out of the box on installation, without modifications to your application code.
 
@@ -12,7 +12,7 @@ Use Laravel explicitly with or without trailing slashes, controlling URL generat
 You can install the package via composer:
 
 ```bash
-composer require vormkracht10/laravel-trailing-slash
+composer require backstage/laravel-trailing-slash
 ```
 
 You can publish the config file with:
@@ -53,8 +53,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Mark van Eijk](https://github.com/markvaneijk)
-- [All Contributors](../../contributors)
+-   [Mark van Eijk](https://github.com/markvaneijk)
+-   [All Contributors](../../contributors)
 
 ## License
 
