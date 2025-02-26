@@ -1,24 +1,25 @@
 <?php
 
-namespace Vormkracht10\TrailingSlash;
+namespace Backstage\TrailingSlash;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Vormkracht10\TrailingSlash\Middleware\EnsureUrlsWithoutTrailingSlash;
-use Vormkracht10\TrailingSlash\Middleware\EnsureUrlsWithTrailingSlash;
+use Backstage\TrailingSlash\Middleware\EnsureUrlsWithoutTrailingSlash;
+use Backstage\TrailingSlash\Middleware\EnsureUrlsWithTrailingSlash;
 
 class TrailingSlashServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('trailing-slash')
-            ->hasConfigFile();
+            ->name('trailing-slash');
+
+        $this->mergeConfigFrom(__DIR__ . '/../config/backstage/trailing-slash.php', 'backstage.trailing-slash');
     }
 
     public function packageBooted()
     {
-        if (! $this->app->config->get('trailing-slash.auto')) {
+        if (! $this->app->config->get('backstage.trailing-slash.auto')) {
             return;
         }
 

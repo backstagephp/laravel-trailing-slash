@@ -1,16 +1,16 @@
 <?php
 
-namespace Vormkracht10\TrailingSlash\Facades;
+namespace Backstage\TrailingSlash\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Vormkracht10\TrailingSlash\TrailingSlash
+ * @see \Backstage\TrailingSlash\TrailingSlash
  */
 class TrailingSlash extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \Vormkracht10\TrailingSlash\TrailingSlash::class;
+        return \Backstage\TrailingSlash\TrailingSlash::class;
     }
 }

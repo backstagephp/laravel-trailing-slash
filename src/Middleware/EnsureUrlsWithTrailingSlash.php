@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\TrailingSlash\Middleware;
+namespace Backstage\TrailingSlash\Middleware;
 
 use Closure;
 

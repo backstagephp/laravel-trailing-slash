@@ -1,10 +1,10 @@
 <?php
 
-namespace Vormkracht10\TrailingSlash\Tests;
+namespace Backstage\TrailingSlash\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Vormkracht10\TrailingSlash\TrailingSlashServiceProvider;
+use Backstage\TrailingSlash\TrailingSlashServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,7 +13,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Vormkracht10\\TrailingSlash\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Backstage\\TrailingSlash\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 

@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Request;
-use Vormkracht10\TrailingSlash\Middleware\EnsureUrlsWithoutTrailingSlash;
+use Backstage\TrailingSlash\Middleware\EnsureUrlsWithoutTrailingSlash;
 
 it('can access root url', function () {
     Route::get('/', fn () => 'Hello World');
@@ -18,7 +18,7 @@ it('ensure url is with trailing slash', function () {
         return response('This is a secret place');
     };
 
-    $middleware = new \Vormkracht10\TrailingSlash\Middleware\EnsureUrlsWithTrailingSlash();
+    $middleware = new \Backstage\TrailingSlash\Middleware\EnsureUrlsWithTrailingSlash();
     $response = $middleware->handle($request, $next);
 
     $this->assertEquals(Response::HTTP_MOVED_PERMANENTLY, $response->getStatusCode());
@@ -29,7 +29,7 @@ it('ensure url is with trailing slash', function () {
         return response('This is a secret place');
     };
 
-    $middleware = new \Vormkracht10\TrailingSlash\Middleware\EnsureUrlsWithTrailingSlash();
+    $middleware = new \Backstage\TrailingSlash\Middleware\EnsureUrlsWithTrailingSlash();
     $response = $middleware->handle($request, $next);
 
     $this->assertEquals(Response::HTTP_OK, $response->getStatusCode());

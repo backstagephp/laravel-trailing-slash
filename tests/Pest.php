@@ -1,5 +1,5 @@
 <?php
 
-use Vormkracht10\TrailingSlash\Tests\TestCase;
+use Backstage\TrailingSlash\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

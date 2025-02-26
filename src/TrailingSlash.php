@@ -1,6 +1,6 @@
 <?php
 
-namespace Vormkracht10\TrailingSlash;
+namespace Backstage\TrailingSlash;
 
 class TrailingSlash
 {
