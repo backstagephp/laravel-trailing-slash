@@ -2,9 +2,9 @@
 
 namespace Backstage\TrailingSlash\Tests;
 
+use Backstage\TrailingSlash\TrailingSlashServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Backstage\TrailingSlash\TrailingSlashServiceProvider;
 
 class TestCase extends Orchestra
 {
